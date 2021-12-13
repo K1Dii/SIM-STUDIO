@@ -1,0 +1,205 @@
+*{
+    margin: 0%;
+    padding: 0%;
+}
+body{
+    background: #f9efbe;
+    background:url(../imagenes/email-pattern.png);
+}
+.menu{
+    text-align: center;
+    width: 100% auto;
+    height: 55px auto;
+    color: #888;
+    border-bottom: 1px solid #DADADA;
+    padding: 0;
+    z-index: 2;
+    background: #42A5F5;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding-right: 1em;
+}  
+
+h2{
+    text-align: center;
+    padding: 5px 0px;
+    background: greenyellow;
+    border-radius: 6px 6px 0px 0px;
+    font-family: 'Teko', sans-serif;
+    font-size: 50px;
+    color: #fff;
+    text-shadow: 0 5px 5px rgba(0,0,0,0.2);
+    transition: 1s;
+}
+.bienvenida:hover .welcome{
+    background: burlywood;
+}
+
+h3{
+    font-family: 'Montserrat', sans-serif;
+}
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 80px 100px;
+}
+.container .box{
+    position: relative;
+    width: 250px;
+    min-width: 50px;
+    padding: 30px;
+    background: #e9e9e9;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+    border-radius: 6px;
+    margin: 10px;
+    box-sizing: border-box;
+    overflow: hidden;
+    text-align: center;
+}
+.container .box .icon{
+    position: relative;
+    width: 100px;
+    height: 100px;
+    padding: 10px;
+    background: brown;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    border-radius: 50%;
+    transition: 0.8s;
+    
+}
+a{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    display: inline-block;
+    padding: 10px 20px;
+    background: #ececec;
+    border-radius: 5px;
+    text-decoration: none;
+    color: #000;
+    font-weight: 700;
+    margin-top: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,.2);
+}
+
+.boton{
+    margin: 15px;
+    padding: 5px 10px;
+    color: #2C394D;
+    background: #fff;
+    border-radius: 5px;
+    font-size: 20px;
+    font-family: sans-serif;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background  0.3s ease;
+}
+.boton:hover{
+    background: #e2e2e2;
+    color: #2C394D;
+}
+.blog{
+    background: #F8F9F9;
+    padding: 20px;
+    width: 60%;
+    margin: 50px 18%;
+    height: 50% auto;
+    text-align: center;
+    
+}
+.texto{
+    margin: 30px 0px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 22px;
+}
+
+
+/*galería de video*/
+.heading{
+    color: #444;
+    font-size: 40px;
+    text-align: center;
+    padding: 10px;
+}
+.containerv{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 15px;
+    align-items: flex-start;
+    padding: 5px 5%;
+}
+.containerv .main-video{
+    background: #fff;
+    border-radius: 5px;
+    padding: 10px;
+}
+.containerv .main-video video{
+    width: 100%;
+    border-radius: 5px;
+}
+.containerv .main-video .titulo{
+    color: #333;
+    font-size: 23px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+.containerv .video-list{
+    background: #fff;
+    border-radius: 5px;
+    height: 520px;
+    overflow-y: scroll;
+}
+.containerv .video-list::-webkit-scrollbar{
+    width: 7px;
+}
+.containerv .video-list::-webkit-scrollbar-track{
+    background: #ccc;
+    border-radius: 50px;
+}
+.containerv .video-list::-webkit-scrollbar-thumb{
+    background: #666;
+    border-radius: 50px;
+}
+.containerv .video-list .vid video{
+    width: 150px;
+    border-radius: 5px;
+}
+.containerv .video-list .vid{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: #f7f7f7;
+    border-radius: 5px;
+    margin: 10px;
+    padding: 10px;
+    border:1px solid rgba(0,0,0,.1);
+    cursor: pointer;
+}
+.containerv .video-list .vid:hover{
+    background: #eee;
+}
+.containerv .video-list .vid.active{
+    background: #2980b9;
+}
+.containerv .video-list .vid.active .titulo{
+    color: #fff;
+}
+.container .video-list .vid .titulo{
+    color: #333;
+    font-size: 17px;
+}
+@media (max-width:991px){
+    .containerv{
+        grid-template-columns: 1.5fr 1fr;
+        padding: 10px;
+    }
+}
+@media (max-width:768px){
+    .containerv{
+        grid-template-columns: 1fr;
+    }
+}
