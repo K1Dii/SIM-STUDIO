@@ -164,8 +164,8 @@ a{
     background: #666;
     border-radius: 50px;
 }
-.containerv .video-list .vid video{
-    width: 150px;
+.containerv .video-list .vid iframe{
+    width: 100px;
     border-radius: 5px;
 }
 .containerv .video-list .vid{
