@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<hmtl5 lang="es">
+    <head>
+        <title>SIM Estudio</title>
+        <meta charset="utf-8">
+        <meta name="keywords" content="oracle sim, sim estudio, gestion de inventario de tienda">
+        <meta name="author" content="K1Dii">
+        <meta name="viewport" content="width=device-width, user-scalable=no,
+        initial-scale=1.0, maximun-scale=1.0, minimum-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/font-awesome-line-awesome/css/all.min.css">
+        <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Roboto&family=Teko:wght@700&display=swap" rel="stylesheet">
+<link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&family=Source+Serif+Pro&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Heebo&family=Poppins:wght@400;500&family=Secular+One&family=Source+Serif+Pro&display=swap" rel="stylesheet">
+<link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+        <link rel="stylesheet" href="../Nueva carpeta/style.css">
+    </head>
+    <body>
+      <header>
+      
+        <div class="logo"><img src="../imagenes/descarga.png"></div>   
+      </header>
+      <div class="blog">
+          <h1>Existencias negativas</h1>
+          <p>Existen varios motivos que causan existencias negativas en el inventario y que deben ser ajustados mediante un reporte de conteo (conteo negativo), en este articulo hablaremos de como solucionar los diferentes escenarios de una existencia negativa.</p>
+
+          <div class="subtema">
+              <h2>-1. Por venta en 0</h2>
+              <img src="../imagenes/hand.png" style="width: 300px; margin-left: 30%;">
+              <p>Sucede cuando un articulo se vende y tiene existencia en sistema en 0. <br>
+            <strong>¿Cómo solucionarlo?</strong><br>
+        En la boleta se captura en 0, podrás identificarlo ya que tendrá movimientos de venta en el Historial de transacciones y también se encontrará registrada en el reporte RCInventarioTienda de existencias negativas.</p>
+                <img src="../imagenes/en1.png">
+                <p>En este ejemplo de arriba se muestra como se ve una existencia negativa por venta en 0. Ya autorizada la boleta en 0, el inventario tiene que quedar como el ejemplo de abajo.</p>
+                <img src="../imagenes/en1c.png">
+          </div>
+          
+          <div class="subtema">
+            <h2>-2. Por venta en subcesta</h2>
+            <img src="../imagenes/handdev.svg" style="width: 300px; margin-left: 30%;">
+            <p>Se da cuando un articulo se vende estando en subcesta (por ejemplo un articulo en mal estado y no se hizo el ajuste a inventario disponible) y con inventario disponible en 0 <br>
+          <strong>¿Cómo solucionarlo?</strong><br>
+      En la boleta se captura en 0, podras identificarlo ya que tendra movimientos de venta en el Historial de transacciones y en tambien se encontrara registrada en el reporte RCInventarioTienda de existencias negativas. Sin embargo en consulta de articulo identificaras que el producto aun sigue en la subcesta</p>
+              <img src="../imagenes/en2.png">
+              <p>En la boleta se captura en 0, sin embargo es importante hacer el cambio de subcesta al inventario disponible. Una vez hecho esto el inventario queda de la siguiente manera.</p>
+              <img src="../imagenes/en1c.png">
+        </div>
+
+        <div class="subtema">
+          <h2>-3. Por carga de proformas</h2>
+          <img src="../imagenes/handdev.svg" style="width: 600px; margin-left: 30%;">
+          <p>Sucede cuando los productos son cargados en proformas (DAP y Transferencia reservada) y no necesariamente por venta.<br>
+        <strong>¿Cómo solucionarlo?</strong><br>
+    En la boleta se capturará la cantidad que indique el Total de stock en <i>consulta de artículo</i>. <strong class="negative">Son negativas falsas</strong> y NO aparecen en el reporte de Existencias negativas de RCInventarioTienda.</p>
+            <img src="../imagenes/en2.png">
+            <p>En la boleta se captura en 0, sin embargo es importante hacer el cambio de subcesta al inventario disponible. Una vez hecho esto el inventario queda de la siguiente manera.</p>
+            <img src="../imagenes/en1c.png">
+      </div>
+
+      <h2>¿Cómo visualizo las existencias negativas?</h2>
+      <p>Desde la página principal da clic en <kbd class="simb" style="cursor: pointer;">Imprimir</kbd> y posterior en <kbd class="simb" style="cursor: pointer;">Informes</kbd>. En Publisher abre identifica la carpeta RCCustom e ingresa a RCInventarioTienda.</p>
+      <img style="width: 400px;"src="../../site3/gif/exn1.gif">
+      <p>En el campo de <i>inventario</i> selecciona <strong>Negativos</strong> y da clic en <kbd class="tecla" style="cursor: pointer;">Aplicar</kbd> y mostrará todas las existencias negativas reales, todo artículo reflejado en este reporte deberá capturarse en 0 en la boleta de conteo negativo.</p>
+      <img style="width: 400px;"src="../../site3/gif/exn2.gif">
+      <p>Todo aquel artículo en que la boleta lo marque como negativo y NO se encuentre en el reporte de existencias negativas, es una <strong>existencia negativa Falsa</strong> y en la boleta de conteo negativo debe capturarse el <strong>Total stock</strong> que se visualiza en <kbd class="simb" style="cursor: pointer;">Consulta de artículo</kbd>.</p>
+      <div><a href="#">+ Dudas?</a></div>
+
+
+
+
+      <footer class="pp">
+        <p>*Sitio web en desarrollo*</p><br>
+        <p>Farmacias del Ahorro Copyright @2022. Todos los derechos reservados</p>
+      </footer>
+
+      </div>
+      
+
+
+    </body>
+</hmtl5>
